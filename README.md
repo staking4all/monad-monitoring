@@ -14,7 +14,7 @@ To make use of this repository and get monitoring running follow the below steps
 
 Clone the repository
 ```
-git clone https://github.com/monad-validators/monad-monitoring.git
+git clone https://github.com/staking4all/monad-monitoring.git
 ```
 
 Check .env variables for Grafana, change as needed
