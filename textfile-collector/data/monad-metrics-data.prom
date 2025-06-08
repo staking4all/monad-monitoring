@@ -1,0 +1,21 @@
+# HELP mc_triedb_total_bytes Total capacity of /dev/nvme0n1p1
+# TYPE mc_triedb_total_bytes gauge
+mc_triedb_total_bytes 1924145348608
+# HELP mc_triedb_used_bytes Used capacity of /dev/nvme0n1p1
+# TYPE mc_triedb_used_bytes gauge
+mc_triedb_used_bytes 1539316278886
+# HELP mc_triedb_avail_bytes Available capacity of /dev/nvme0n1p1
+# TYPE mc_triedb_avail_bytes gauge
+mc_triedb_avail_bytes 384829069722
+# HELP mc_current_epoch provides Monad epoch from logs
+# TYPE mc_current_epoch gauge
+mc_current_epoch 414
+# HELP mc_current_round provides Monad round from logs
+# TYPE mc_current_round gauge
+mc_current_round 21663938
+# HELP mc_forkpoint_dir_count provides file count of Monad forkpoint directory # TYPE mc_forkpoint_dir_count gauge
+mc_forkpoint_dir_count 6390
+# HELP mc_ledger_dir_count provides file count of Monad ledger directory # TYPE mc_ledger_dir_count gauge
+mc_ledger_dir_count 13338
+# HELP mc_wal_dir_count provides file count of Monad wal files # TYPE mc_wal_dir_count gauge
+mc_wal_dir_count 1
