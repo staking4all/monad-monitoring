@@ -73,6 +73,9 @@ You will be able to access a grafana dashboard on `http://<your_own_ip_address>:
 
 The default dashboard is `Monad monitoring`, an additional dashboard has been added that is `Monad monitoring v2`. v2 adds some extra metrics however needs some extra config.
 
+
+## Activate V2 dashboard
+
 To use V2 you must make an entry in crontab by adding one of the below line, this script collects extra info to be displayed on the dashbaord
 
 For Monad binary installation
@@ -90,11 +93,27 @@ If using a binary installation you need to ensure the user monad for crontab can
 sudo usermod -a -G adm monad
 ````
 
-v2 adds the following metrics
+## Activate V3 dashboard
+
+To use V3 you must you must have monad-ledger-tail installed and running. At this moment it only works with binary installation 
+```
+sudo systemctl daemon-reload
+sudo systemctl restart monad-ledger-tail
+```
+
+## Dashboard Differences
+
+Monad is evolving quickly, and as it does, we continue to add new dashboards to capture additional insights and support different installation types. To ensure compatibility, we’ve retained previous dashboard versions to accommodate older Monad setups.
+
+v1 was the first release
+
+v2 is v1 with the following additional metrics
 - monad specific stats like round, epoch, etc
 - triedb usage stats
 - monad folders that should be cleared and monitored occasionally
 - additional disk metrics
 
-  
+v3 is v2 with the following additional metrics
+- monad consensus info around proposed & skipped blocks
+
 

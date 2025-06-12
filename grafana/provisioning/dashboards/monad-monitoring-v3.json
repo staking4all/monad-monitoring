@@ -18,7 +18,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 2,
+  "id": 5,
   "links": [],
   "panels": [
     {
@@ -3571,12 +3571,458 @@
       "type": "timeseries"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P35E6C0425375C40D"
+      },
+      "description": "Shows your success on proposing or missing blocks",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red"
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 12,
+        "x": 0,
+        "y": 47
+      },
+      "id": 52,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.0.1",
+      "targets": [
+        {
+          "disableTextWrap": false,
+          "editorMode": "code",
+          "expr": "max by (round, type, time_stamp) (\r\n  mc_block_proposal{validator=\"monad-devnet-02.staking4all.org\",type=\"proposed\"}\r\n)",
+          "format": "table",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": "Proposed blocks",
+      "transformations": [
+        {
+          "id": "groupBy",
+          "options": {
+            "fields": {
+              "Value": {
+                "aggregations": [
+                  "min"
+                ],
+                "operation": "aggregate"
+              },
+              "round": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "seen_unix": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "time_stamp": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "type": {
+                "aggregations": [],
+                "operation": "groupby"
+              }
+            }
+          }
+        },
+        {
+          "filter": {
+            "id": "byRefId",
+            "options": ""
+          },
+          "id": "groupBy",
+          "options": {
+            "fields": {
+              "Value (min)": {
+                "aggregations": [
+                  "count"
+                ],
+                "operation": "aggregate"
+              },
+              "round": {
+                "aggregations": []
+              },
+              "type": {
+                "aggregations": [],
+                "operation": "groupby"
+              }
+            }
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "includeByName": {},
+            "indexByName": {},
+            "renameByName": {
+              "Value (min)": "Success/Failure",
+              "round": "Round",
+              "seen_unix": "Time Stamp",
+              "time_stamp": "Time Stamp",
+              "type": "Status"
+            }
+          }
+        },
+        {
+          "id": "sortBy",
+          "options": {
+            "fields": {},
+            "sort": [
+              {
+                "desc": true,
+                "field": "Round"
+              }
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P35E6C0425375C40D"
+      },
+      "description": "Shows your success on proposing or missing blocks",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "noValue": "0",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 12,
+        "x": 12,
+        "y": 47
+      },
+      "id": 53,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.0.1",
+      "targets": [
+        {
+          "disableTextWrap": false,
+          "editorMode": "code",
+          "expr": "max by (round, type, time_stamp) (\r\n  mc_block_proposal{validator=\"monad-devnet-02.staking4all.org\",type=\"skipped\"}\r\n)",
+          "format": "table",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": "Skipped blocks",
+      "transformations": [
+        {
+          "id": "groupBy",
+          "options": {
+            "fields": {
+              "Value": {
+                "aggregations": [
+                  "min"
+                ],
+                "operation": "aggregate"
+              },
+              "round": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "seen_unix": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "time_stamp": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "type": {
+                "aggregations": [],
+                "operation": "groupby"
+              }
+            }
+          }
+        },
+        {
+          "id": "groupBy",
+          "options": {
+            "fields": {
+              "Value (min)": {
+                "aggregations": [
+                  "count"
+                ],
+                "operation": "aggregate"
+              },
+              "round": {
+                "aggregations": []
+              },
+              "type": {
+                "aggregations": [],
+                "operation": "groupby"
+              }
+            }
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "includeByName": {},
+            "indexByName": {},
+            "renameByName": {
+              "Value (min)": "Success/Failure",
+              "round": "Round",
+              "seen_unix": "Time Stamp",
+              "time_stamp": "Time Stamp",
+              "type": "Status"
+            }
+          }
+        },
+        {
+          "id": "sortBy",
+          "options": {
+            "fields": {},
+            "sort": [
+              {
+                "desc": true,
+                "field": "Round"
+              }
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P35E6C0425375C40D"
+      },
+      "description": "Shows your success on proposing or missing blocks",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "center",
+            "cellOptions": {
+              "type": "auto",
+              "wrapText": false
+            },
+            "filterable": false,
+            "inspect": false
+          },
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "index": 1,
+                  "text": "🟥"
+                },
+                "1": {
+                  "index": 0,
+                  "text": "🟩"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 14,
+        "w": 24,
+        "x": 0,
+        "y": 51
+      },
+      "id": 50,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": true,
+        "sortBy": []
+      },
+      "pluginVersion": "12.0.1",
+      "targets": [
+        {
+          "editorMode": "code",
+          "expr": "max by (round, type, time_stamp,seq_num) (\r\n  mc_block_proposal{validator=\"monad-devnet-02.staking4all.org\"}\r\n)",
+          "format": "table",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Node consensus",
+      "transformations": [
+        {
+          "id": "groupBy",
+          "options": {
+            "fields": {
+              "Value": {
+                "aggregations": [
+                  "min"
+                ],
+                "operation": "aggregate"
+              },
+              "round": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "seen_unix": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "seq_num": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "time_stamp": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "type": {
+                "aggregations": [],
+                "operation": "groupby"
+              }
+            }
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "includeByName": {},
+            "indexByName": {},
+            "renameByName": {
+              "Value (min)": "Success/Failure",
+              "round": "Round",
+              "seen_unix": "Time Stamp",
+              "seq_num": "Block ",
+              "time_stamp": "Time Stamp",
+              "type": "Status"
+            }
+          }
+        },
+        {
+          "id": "sortBy",
+          "options": {
+            "fields": {},
+            "sort": [
+              {
+                "desc": true,
+                "field": "Round"
+              }
+            ]
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
       "collapsed": false,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 47
+        "y": 65
       },
       "id": 43,
       "panels": [],
@@ -3627,9 +4073,9 @@
         "h": 2,
         "w": 6,
         "x": 0,
-        "y": 48
+        "y": 66
       },
-      "id": 19,
+      "id": 51,
       "maxDataPoints": 100,
       "options": {
         "colorMode": "none",
@@ -3720,7 +4166,7 @@
         "h": 2,
         "w": 6,
         "x": 6,
-        "y": 48
+        "y": 66
       },
       "id": 39,
       "maxDataPoints": 100,
@@ -3813,7 +4259,7 @@
         "h": 2,
         "w": 6,
         "x": 12,
-        "y": 48
+        "y": 66
       },
       "id": 36,
       "maxDataPoints": 100,
@@ -3910,7 +4356,7 @@
         "h": 2,
         "w": 6,
         "x": 18,
-        "y": 48
+        "y": 66
       },
       "id": 38,
       "maxDataPoints": 100,
@@ -4002,7 +4448,7 @@
         "h": 3,
         "w": 12,
         "x": 0,
-        "y": 50
+        "y": 68
       },
       "id": 48,
       "options": {
@@ -4085,7 +4531,7 @@
         "h": 3,
         "w": 12,
         "x": 12,
-        "y": 50
+        "y": 68
       },
       "id": 47,
       "options": {
@@ -4527,7 +4973,7 @@
         "h": 10,
         "w": 12,
         "x": 0,
-        "y": 53
+        "y": 71
       },
       "id": 42,
       "options": {
@@ -4987,7 +5433,7 @@
         "h": 10,
         "w": 12,
         "x": 12,
-        "y": 53
+        "y": 71
       },
       "id": 44,
       "options": {
@@ -5449,7 +5895,7 @@
         "h": 10,
         "w": 12,
         "x": 0,
-        "y": 63
+        "y": 81
       },
       "id": 45,
       "options": {
@@ -5900,7 +6346,7 @@
         "h": 10,
         "w": 12,
         "x": 12,
-        "y": 63
+        "y": 81
       },
       "id": 46,
       "options": {
@@ -5970,12 +6416,12 @@
     ]
   },
   "time": {
-    "from": "now-30m",
+    "from": "now-1h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "browser",
-  "title": "Monad monitoring v2",
-  "uid": "bdvlxhplgqo00ev2",
-  "version": 3
+  "title": "Monad monitoring v3",
+  "uid": "bdvlxhplgqo00ev3",
+  "version": 1
 }
