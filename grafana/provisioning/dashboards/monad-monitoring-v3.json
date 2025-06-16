@@ -102,7 +102,7 @@
         "sizing": "auto",
         "text": {}
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "datasource": {
@@ -188,7 +188,7 @@
         "sizing": "auto",
         "text": {}
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "datasource": {
@@ -275,7 +275,7 @@
         "sizing": "auto",
         "text": {}
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "datasource": {
@@ -352,7 +352,7 @@
         "sizing": "auto",
         "text": {}
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "datasource": {
@@ -454,7 +454,7 @@
         "sizing": "auto",
         "text": {}
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "datasource": {
@@ -544,7 +544,7 @@
         "sizing": "auto",
         "text": {}
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "datasource": {
@@ -631,7 +631,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "datasource": {
@@ -714,7 +714,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "datasource": {
@@ -797,7 +797,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "datasource": {
@@ -880,7 +880,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "datasource": {
@@ -1089,7 +1089,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "datasource": {
@@ -1629,7 +1629,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "datasource": {
@@ -1791,7 +1791,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "datasource": {
@@ -2239,7 +2239,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "datasource": {
@@ -2349,7 +2349,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "datasource": {
@@ -2432,7 +2432,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "datasource": {
@@ -2515,7 +2515,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "datasource": {
@@ -2598,7 +2598,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "datasource": {
@@ -2681,7 +2681,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "datasource": {
@@ -2764,7 +2764,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "datasource": {
@@ -2866,7 +2866,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "datasource": {
@@ -2964,7 +2964,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "datasource": {
@@ -3062,7 +3062,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "datasource": {
@@ -3160,7 +3160,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "datasource": {
@@ -3258,7 +3258,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "datasource": {
@@ -3356,7 +3356,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "datasource": {
@@ -3454,7 +3454,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "datasource": {
@@ -3552,7 +3552,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "datasource": {
@@ -3621,7 +3621,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "disableTextWrap": false,
@@ -3773,7 +3773,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "disableTextWrap": false,
@@ -3889,21 +3889,7 @@
             "filterable": false,
             "inspect": false
           },
-          "mappings": [
-            {
-              "options": {
-                "0": {
-                  "index": 1,
-                  "text": "🟥"
-                },
-                "1": {
-                  "index": 0,
-                  "text": "🟩"
-                }
-              },
-              "type": "value"
-            }
-          ],
+          "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -3917,7 +3903,34 @@
             ]
           }
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Value (min)"
+            },
+            "properties": [
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "options": {
+                      "0": {
+                        "index": 1,
+                        "text": "🟥"
+                      },
+                      "1": {
+                        "index": 0,
+                        "text": "🟩"
+                      }
+                    },
+                    "type": "value"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       },
       "gridPos": {
         "h": 14,
@@ -3939,7 +3952,7 @@
         "showHeader": true,
         "sortBy": []
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "editorMode": "code",
@@ -4095,7 +4108,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "datasource": {
@@ -4188,7 +4201,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "datasource": {
@@ -4281,7 +4294,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "datasource": {
@@ -4378,7 +4391,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "datasource": {
@@ -4469,7 +4482,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "datasource": {
@@ -4552,7 +4565,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "datasource": {
@@ -4994,7 +5007,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "datasource": {
@@ -5454,7 +5467,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "datasource": {
@@ -5916,7 +5929,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "datasource": {
@@ -6367,7 +6380,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.0.1",
+      "pluginVersion": "12.0.1+security-01",
       "targets": [
         {
           "datasource": {
@@ -6416,7 +6429,7 @@
     ]
   },
   "time": {
-    "from": "now-30m",
+    "from": "now-5m",
     "to": "now"
   },
   "timepicker": {},
