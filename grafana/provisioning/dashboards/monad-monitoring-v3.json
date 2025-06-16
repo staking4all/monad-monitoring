@@ -18,7 +18,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 5,
+  "id": 2,
   "links": [],
   "panels": [
     {
@@ -3626,7 +3626,7 @@
         {
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "max by (round, type, time_stamp) (\r\n  mc_block_proposal{validator=\"monad-devnet-02.staking4all.org\",type=\"proposed\"}\r\n)",
+          "expr": "max by (round, type, time_stamp) (\r\n  mc_block_proposal{validator=~\".*\",type=\"proposed\"}\r\n)",
           "format": "table",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
@@ -3778,7 +3778,7 @@
         {
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "max by (round, type, time_stamp) (\r\n  mc_block_proposal{validator=\"monad-devnet-02.staking4all.org\",type=\"skipped\"}\r\n)",
+          "expr": "max by (round, type, time_stamp) (\r\n  mc_block_proposal{validator=~\".*\",type=\"skipped\"}\r\n)",
           "format": "table",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
@@ -3943,7 +3943,7 @@
       "targets": [
         {
           "editorMode": "code",
-          "expr": "max by (round, type, time_stamp,seq_num) (\r\n  mc_block_proposal{validator=\"monad-devnet-02.staking4all.org\"}\r\n)",
+          "expr": "max by (round, type, time_stamp,seq_num) (\r\n  mc_block_proposal{validator=~\".*\"}\r\n)",
           "format": "table",
           "legendFormat": "__auto",
           "range": true,
@@ -6416,12 +6416,12 @@
     ]
   },
   "time": {
-    "from": "now-1h",
+    "from": "now-30m",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "browser",
   "title": "Monad monitoring v3",
   "uid": "bdvlxhplgqo00ev3",
-  "version": 1
+  "version": 2
 }
