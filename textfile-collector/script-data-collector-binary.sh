@@ -6,7 +6,7 @@ source /home/monad/.bashrc
 source /home/monad/.profile
 
 # Get validator DNS
-VALIDATOR_DNS=$(grep 'VALIDATOR_DNS' /home/monad/monad/monad-monitoring/.env | cut -d '=' -f2) || { echo "VALIDATOR_DNS not found in .env"; exit 1; }
+VALIDATOR_DNS=$(grep 'VALIDATOR_DNS' /home/monad/monad-monitoring/.env | cut -d '=' -f2) || { echo "VALIDATOR_DNS not found in .env"; exit 1; }
 
 TARGET_DRIVE=$(grep 'TARGET_DRIVE' /home/monad/.env | cut -d '=' -f2) || { echo "TARGET_DRIVE not found in .env"; exit 1; }
 
