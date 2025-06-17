@@ -1,108 +1,117 @@
-# HELP mc_triedb_total_bytes Total capacity of /dev/nvme0n1p1
+# HELP mc_triedb_total_bytes Total capacity of /dev/triedb
 # TYPE mc_triedb_total_bytes gauge
 mc_triedb_total_bytes 1924145348608
-# HELP mc_triedb_used_bytes Used capacity of /dev/nvme0n1p1
+# HELP mc_triedb_used_bytes Used capacity of /dev/triedb
 # TYPE mc_triedb_used_bytes gauge
-mc_triedb_used_bytes 1242448139387
-# HELP mc_triedb_avail_bytes Available capacity of /dev/nvme0n1p1
+mc_triedb_used_bytes 698973715169
+# HELP mc_triedb_avail_bytes Available capacity of /dev/triedb
 # TYPE mc_triedb_avail_bytes gauge
-mc_triedb_avail_bytes 681697209221
+mc_triedb_avail_bytes 1225171633439
 # HELP mc_current_epoch provides Monad epoch from logs
 # TYPE mc_current_epoch gauge
-mc_current_epoch 426
+mc_current_epoch 441
 # HELP mc_current_round provides Monad round from logs
 # TYPE mc_current_round gauge
-mc_current_round 22270506
+mc_current_round 23098027
 # HELP mc_forkpoint_dir_count provides file count of Monad forkpoint directory
 # TYPE mc_forkpoint_dir_count gauge
-mc_forkpoint_dir_count 6615
+mc_forkpoint_dir_count 6475
 # HELP mc_ledger_dir_count provides file count of Monad ledger directory
 # TYPE mc_ledger_dir_count gauge
-mc_ledger_dir_count 13530
+mc_ledger_dir_count 13465
 # HELP mc_wal_dir_count provides file count of Monad wal files
 # TYPE mc_wal_dir_count gauge
 mc_wal_dir_count 1
 # HELP mc_block_proposal Indicates a block was proposed (1) or skipped (0) by this validator, with additional sequence and transaction details
 # TYPE mc_block_proposal gauge
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22262851", type="proposed", seq_num="21251585", num_tx="113", time_stamp="2025-06-12 12:28:33"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22262859", type="proposed", seq_num="21251593", num_tx="62", time_stamp="2025-06-12 12:28:37"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22263107", type="proposed", seq_num="21251837", num_tx="139", time_stamp="2025-06-12 12:30:44"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22263192", type="proposed", seq_num="21251918", num_tx="80", time_stamp="2025-06-12 12:31:30"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22263221", type="proposed", seq_num="21251947", num_tx="88", time_stamp="2025-06-12 12:31:44"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22263378", type="proposed", seq_num="21252097", num_tx="66", time_stamp="2025-06-12 12:33:07"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22263381", type="proposed", seq_num="21252100", num_tx="83", time_stamp="2025-06-12 12:33:09"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22263399", type="proposed", seq_num="21252118", num_tx="88", time_stamp="2025-06-12 12:33:18"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22263462", type="proposed", seq_num="21252177", num_tx="77", time_stamp="2025-06-12 12:33:52"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22263491", type="proposed", seq_num="21252206", num_tx="79", time_stamp="2025-06-12 12:34:07"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22263576", type="proposed", seq_num="21252285", num_tx="77", time_stamp="2025-06-12 12:34:53"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22263637", type="proposed", seq_num="21252346", num_tx="73", time_stamp="2025-06-12 12:35:24"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22263684", type="proposed", seq_num="21252385", num_tx="58", time_stamp="2025-06-12 12:35:52"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22263716", type="proposed", seq_num="21252415", num_tx="82", time_stamp="2025-06-12 12:36:10"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22263875", type="proposed", seq_num="21252565", num_tx="48", time_stamp="2025-06-12 12:37:36"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22263939", type="proposed", seq_num="21252625", num_tx="91", time_stamp="2025-06-12 12:38:10"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22264041", type="proposed", seq_num="21252721", num_tx="52", time_stamp="2025-06-12 12:39:05"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22264056", type="proposed", seq_num="21252736", num_tx="63", time_stamp="2025-06-12 12:39:12"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22264182", type="proposed", seq_num="21252854", num_tx="97", time_stamp="2025-06-12 12:40:21"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22264287", type="proposed", seq_num="21252957", num_tx="94", time_stamp="2025-06-12 12:41:15"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22264420", type="proposed", seq_num="21253090", num_tx="79", time_stamp="2025-06-12 12:42:22"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22264511", type="proposed", seq_num="21253181", num_tx="46", time_stamp="2025-06-12 12:43:07"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22264615", type="proposed", seq_num="21253279", num_tx="82", time_stamp="2025-06-12 12:44:03"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22264620", type="proposed", seq_num="21253284", num_tx="52", time_stamp="2025-06-12 12:44:06"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22264734", type="proposed", seq_num="21253394", num_tx="98", time_stamp="2025-06-12 12:45:06"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22264758", type="proposed", seq_num="21253418", num_tx="68", time_stamp="2025-06-12 12:45:18"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22264927", type="proposed", seq_num="21253581", num_tx="68", time_stamp="2025-06-12 12:46:46"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22264942", type="proposed", seq_num="21253596", num_tx="66", time_stamp="2025-06-12 12:46:54"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22265081", type="proposed", seq_num="21253733", num_tx="83", time_stamp="2025-06-12 12:48:05"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22265163", type="proposed", seq_num="21253811", num_tx="82", time_stamp="2025-06-12 12:48:49"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22265496", type="proposed", seq_num="21254121", num_tx="81", time_stamp="2025-06-12 12:51:50"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22265538", type="proposed", seq_num="21254161", num_tx="64", time_stamp="2025-06-12 12:52:13"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22265540", type="proposed", seq_num="21254163", num_tx="87", time_stamp="2025-06-12 12:52:14"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22265658", type="proposed", seq_num="21254281", num_tx="94", time_stamp="2025-06-12 12:53:13"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22265720", type="proposed", seq_num="21254339", num_tx="77", time_stamp="2025-06-12 12:53:46"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22265847", type="proposed", seq_num="21254462", num_tx="89", time_stamp="2025-06-12 12:54:53"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22265933", type="proposed", seq_num="21254542", num_tx="72", time_stamp="2025-06-12 12:55:40"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22265997", type="proposed", seq_num="21254604", num_tx="121", time_stamp="2025-06-12 12:56:13"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22266016", type="proposed", seq_num="21254623", num_tx="72", time_stamp="2025-06-12 12:56:23"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22266097", type="proposed", seq_num="21254704", num_tx="92", time_stamp="2025-06-12 12:57:03"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22266103", type="proposed", seq_num="21254710", num_tx="71", time_stamp="2025-06-12 12:57:06"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22266212", type="proposed", seq_num="21254811", num_tx="61", time_stamp="2025-06-12 12:58:06"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22266267", type="proposed", seq_num="21254864", num_tx="48", time_stamp="2025-06-12 12:58:35"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22266315", type="proposed", seq_num="21254910", num_tx="187", time_stamp="2025-06-12 12:59:00"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22266396", type="proposed", seq_num="21254989", num_tx="87", time_stamp="2025-06-12 12:59:42"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22266542", type="proposed", seq_num="21255127", num_tx="79", time_stamp="2025-06-12 13:01:00"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22266736", type="proposed", seq_num="21255311", num_tx="79", time_stamp="2025-06-12 13:02:44"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22266738", type="proposed", seq_num="21255313", num_tx="108", time_stamp="2025-06-12 13:02:45"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22267021", type="proposed", seq_num="21255586", num_tx="78", time_stamp="2025-06-12 13:05:13"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22267097", type="proposed", seq_num="21255660", num_tx="99", time_stamp="2025-06-12 13:05:53"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22267142", type="proposed", seq_num="21255703", num_tx="88", time_stamp="2025-06-12 13:06:16"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22267405", type="proposed", seq_num="21255957", num_tx="77", time_stamp="2025-06-12 13:08:34"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22267452", type="proposed", seq_num="21256004", num_tx="54", time_stamp="2025-06-12 13:08:58"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22267543", type="proposed", seq_num="21256087", num_tx="98", time_stamp="2025-06-12 13:09:48"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22267599", type="proposed", seq_num="21256139", num_tx="77", time_stamp="2025-06-12 13:10:19"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22267968", type="proposed", seq_num="21256483", num_tx="88", time_stamp="2025-06-12 13:13:40"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22267977", type="proposed", seq_num="21256490", num_tx="23", time_stamp="2025-06-12 13:13:46"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22267988", type="proposed", seq_num="21256501", num_tx="76", time_stamp="2025-06-12 13:13:51"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22268068", type="proposed", seq_num="21256579", num_tx="95", time_stamp="2025-06-12 13:14:33"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22268127", type="proposed", seq_num="21256634", num_tx="75", time_stamp="2025-06-12 13:15:05"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22268207", type="proposed", seq_num="21256712", num_tx="56", time_stamp="2025-06-12 13:15:46"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22268260", type="proposed", seq_num="21256765", num_tx="110", time_stamp="2025-06-12 13:16:13"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22268312", type="proposed", seq_num="21256815", num_tx="80", time_stamp="2025-06-12 13:16:40"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22268340", type="proposed", seq_num="21256841", num_tx="67", time_stamp="2025-06-12 13:16:55"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22268474", type="proposed", seq_num="21256965", num_tx="29", time_stamp="2025-06-12 13:18:09"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22268475", type="proposed", seq_num="21256966", num_tx="55", time_stamp="2025-06-12 13:18:09"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22268636", type="proposed", seq_num="21257120", num_tx="88", time_stamp="2025-06-12 13:19:35"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22268797", type="proposed", seq_num="21257281", num_tx="84", time_stamp="2025-06-12 13:20:55"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22268869", type="proposed", seq_num="21257353", num_tx="85", time_stamp="2025-06-12 13:21:32"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22268953", type="proposed", seq_num="21257429", num_tx="92", time_stamp="2025-06-12 13:22:19"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22268983", type="proposed", seq_num="21257459", num_tx="93", time_stamp="2025-06-12 13:22:34"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22269097", type="proposed", seq_num="21257567", num_tx="93", time_stamp="2025-06-12 13:23:34"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22269171", type="proposed", seq_num="21257637", num_tx="79", time_stamp="2025-06-12 13:24:14"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22269404", type="proposed", seq_num="21257857", num_tx="63", time_stamp="2025-06-12 13:26:20"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22269666", type="proposed", seq_num="21258109", num_tx="98", time_stamp="2025-06-12 13:28:37"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22269886", type="proposed", seq_num="21258323", num_tx="102", time_stamp="2025-06-12 13:30:31"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22269910", type="proposed", seq_num="21258347", num_tx="90", time_stamp="2025-06-12 13:30:43"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22269923", type="proposed", seq_num="21258360", num_tx="99", time_stamp="2025-06-12 13:30:50"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22270051", type="proposed", seq_num="21258482", num_tx="92", time_stamp="2025-06-12 13:31:58"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22270250", type="proposed", seq_num="21258669", num_tx="94", time_stamp="2025-06-12 13:33:45"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22270312", type="proposed", seq_num="21258727", num_tx="126", time_stamp="2025-06-12 13:34:19"} 1
-mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="22270438", type="proposed", seq_num="21258849", num_tx="82", time_stamp="2025-06-12 13:35:25"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23090404", type="proposed", seq_num="22033272", num_tx="44", time_stamp="2025-06-17 15:49:06"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23090412", type="proposed", seq_num="22033280", num_tx="58", time_stamp="2025-06-17 15:49:10"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23090455", type="proposed", seq_num="22033317", num_tx="54", time_stamp="2025-06-17 15:49:35"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23090630", type="proposed", seq_num="22033477", num_tx="48", time_stamp="2025-06-17 15:51:12"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23090744", type="proposed", seq_num="22033575", num_tx="58", time_stamp="2025-06-17 15:52:21"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23090753", type="proposed", seq_num="22033584", num_tx="55", time_stamp="2025-06-17 15:52:25"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23090764", type="proposed", seq_num="22033595", num_tx="41", time_stamp="2025-06-17 15:52:31"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23090793", type="proposed", seq_num="22033617", num_tx="309", time_stamp="2025-06-17 15:52:50"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23090794", type="proposed", seq_num="22033618", num_tx="24", time_stamp="2025-06-17 15:52:50"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23090797", type="proposed", seq_num="22033621", num_tx="72", time_stamp="2025-06-17 15:52:52"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23090820", type="proposed", seq_num="22033642", num_tx="53", time_stamp="2025-06-17 15:53:04"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23090839", type="proposed", seq_num="22033659", num_tx="50", time_stamp="2025-06-17 15:53:15"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23090878", type="proposed", seq_num="22033694", num_tx="48", time_stamp="2025-06-17 15:53:37"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23090949", type="proposed", seq_num="22033761", num_tx="57", time_stamp="2025-06-17 15:54:15"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23090988", type="proposed", seq_num="22033792", num_tx="66", time_stamp="2025-06-17 15:54:40"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23091047", type="proposed", seq_num="22033841", num_tx="62", time_stamp="2025-06-17 15:55:16"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23091302", type="proposed", seq_num="22034073", num_tx="51", time_stamp="2025-06-17 15:57:38"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23091370", type="proposed", seq_num="22034135", num_tx="40", time_stamp="2025-06-17 15:58:16"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23091439", type="proposed", seq_num="22034199", num_tx="38", time_stamp="2025-06-17 15:58:54"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23091487", type="proposed", seq_num="22034237", num_tx="43", time_stamp="2025-06-17 15:59:24"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23091544", type="proposed", seq_num="22034290", num_tx="43", time_stamp="2025-06-17 15:59:55"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23091688", type="proposed", seq_num="22034427", num_tx="54", time_stamp="2025-06-17 16:01:12"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23091726", type="proposed", seq_num="22034463", num_tx="53", time_stamp="2025-06-17 16:01:32"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23091733", type="proposed", seq_num="22034468", num_tx="38", time_stamp="2025-06-17 16:01:37"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23091802", type="proposed", seq_num="22034531", num_tx="284", time_stamp="2025-06-17 16:02:16"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23091821", type="proposed", seq_num="22034550", num_tx="57", time_stamp="2025-06-17 16:02:25"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23091825", type="proposed", seq_num="22034552", num_tx="87", time_stamp="2025-06-17 16:02:28"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23091837", type="proposed", seq_num="22034564", num_tx="58", time_stamp="2025-06-17 16:02:34"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23091888", type="proposed", seq_num="22034610", num_tx="55", time_stamp="2025-06-17 16:03:03"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23092283", type="proposed", seq_num="22034971", num_tx="47", time_stamp="2025-06-17 16:06:42"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23092395", type="proposed", seq_num="22035073", num_tx="56", time_stamp="2025-06-17 16:07:45"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23092575", type="proposed", seq_num="22035244", num_tx="45", time_stamp="2025-06-17 16:09:21"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23092596", type="proposed", seq_num="22035265", num_tx="46", time_stamp="2025-06-17 16:09:32"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23092729", type="proposed", seq_num="22035390", num_tx="48", time_stamp="2025-06-17 16:10:43"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23093216", type="proposed", seq_num="22035833", num_tx="50", time_stamp="2025-06-17 16:15:15"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23093538", type="proposed", seq_num="22036120", num_tx="52", time_stamp="2025-06-17 16:18:19"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23093542", type="proposed", seq_num="22036124", num_tx="63", time_stamp="2025-06-17 16:18:21"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23093685", type="proposed", seq_num="22036252", num_tx="55", time_stamp="2025-06-17 16:19:42"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23093919", type="proposed", seq_num="22036469", num_tx="50", time_stamp="2025-06-17 16:21:50"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23094059", type="proposed", seq_num="22036594", num_tx="54", time_stamp="2025-06-17 16:23:10"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23094136", type="proposed", seq_num="22036666", num_tx="56", time_stamp="2025-06-17 16:23:53"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23094182", type="proposed", seq_num="22036706", num_tx="51", time_stamp="2025-06-17 16:24:20"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23094315", type="proposed", seq_num="22036835", num_tx="56", time_stamp="2025-06-17 16:25:29"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23094453", type="proposed", seq_num="22036956", num_tx="79", time_stamp="2025-06-17 16:26:49"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23094501", type="proposed", seq_num="22037000", num_tx="48", time_stamp="2025-06-17 16:27:15"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23094522", type="proposed", seq_num="22037021", num_tx="50", time_stamp="2025-06-17 16:27:26"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23094625", type="proposed", seq_num="22037122", num_tx="55", time_stamp="2025-06-17 16:28:19"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23094646", type="proposed", seq_num="22037141", num_tx="50", time_stamp="2025-06-17 16:28:31"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23094731", type="proposed", seq_num="22037220", num_tx="45", time_stamp="2025-06-17 16:29:17"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23094863", type="proposed", seq_num="22037334", num_tx="61", time_stamp="2025-06-17 16:30:34"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23095006", type="proposed", seq_num="22037455", num_tx="38", time_stamp="2025-06-17 16:32:00"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23095073", type="proposed", seq_num="22037522", num_tx="61", time_stamp="2025-06-17 16:32:34"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23095101", type="proposed", seq_num="22037548", num_tx="54", time_stamp="2025-06-17 16:32:49"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23095124", type="proposed", seq_num="22037571", num_tx="39", time_stamp="2025-06-17 16:33:00"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23095173", type="proposed", seq_num="22037616", num_tx="89", time_stamp="2025-06-17 16:33:28"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23095187", type="proposed", seq_num="22037630", num_tx="44", time_stamp="2025-06-17 16:33:35"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23095200", type="proposed", seq_num="22037643", num_tx="108", time_stamp="2025-06-17 16:33:41"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23095212", type="proposed", seq_num="22037655", num_tx="48", time_stamp="2025-06-17 16:33:47"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23095233", type="proposed", seq_num="22037674", num_tx="267", time_stamp="2025-06-17 16:33:59"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23095296", type="proposed", seq_num="22037733", num_tx="57", time_stamp="2025-06-17 16:34:33"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23095373", type="proposed", seq_num="22037804", num_tx="67", time_stamp="2025-06-17 16:35:15"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23095537", type="proposed", seq_num="22037948", num_tx="58", time_stamp="2025-06-17 16:36:50"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23095558", type="proposed", seq_num="22037967", num_tx="56", time_stamp="2025-06-17 16:37:02"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23095702", type="proposed", seq_num="22038101", num_tx="54", time_stamp="2025-06-17 16:38:20"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23095789", type="proposed", seq_num="22038178", num_tx="45", time_stamp="2025-06-17 16:39:10"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23095960", type="proposed", seq_num="22038341", num_tx="47", time_stamp="2025-06-17 16:40:41"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23095972", type="proposed", seq_num="22038353", num_tx="63", time_stamp="2025-06-17 16:40:47"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23096206", type="proposed", seq_num="22038568", num_tx="55", time_stamp="2025-06-17 16:42:56"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23096300", type="proposed", seq_num="22038655", num_tx="48", time_stamp="2025-06-17 16:43:49"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23096338", type="proposed", seq_num="22038686", num_tx="55", time_stamp="2025-06-17 16:44:13"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23096471", type="proposed", seq_num="22038813", num_tx="78", time_stamp="2025-06-17 16:45:24"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23096658", type="proposed", seq_num="22038995", num_tx="56", time_stamp="2025-06-17 16:47:01"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23096862", type="proposed", seq_num="22039191", num_tx="97", time_stamp="2025-06-17 16:48:48"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23096879", type="proposed", seq_num="22039208", num_tx="62", time_stamp="2025-06-17 16:48:57"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23096887", type="proposed", seq_num="22039216", num_tx="62", time_stamp="2025-06-17 16:49:01"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23097197", type="proposed", seq_num="22039504", num_tx="54", time_stamp="2025-06-17 16:51:50"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23097282", type="proposed", seq_num="22039578", num_tx="96", time_stamp="2025-06-17 16:52:40"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23097343", type="proposed", seq_num="22039635", num_tx="52", time_stamp="2025-06-17 16:53:13"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23097445", type="proposed", seq_num="22039731", num_tx="69", time_stamp="2025-06-17 16:54:08"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23097446", type="proposed", seq_num="22039732", num_tx="57", time_stamp="2025-06-17 16:54:08"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23097479", type="proposed", seq_num="22039765", num_tx="63", time_stamp="2025-06-17 16:54:25"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23097492", type="proposed", seq_num="22039778", num_tx="62", time_stamp="2025-06-17 16:54:32"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23097610", type="proposed", seq_num="22039896", num_tx="54", time_stamp="2025-06-17 16:55:31"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23097615", type="proposed", seq_num="22039898", num_tx="126", time_stamp="2025-06-17 16:55:35"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23097690", type="proposed", seq_num="22039967", num_tx="66", time_stamp="2025-06-17 16:56:17"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23097700", type="proposed", seq_num="22039977", num_tx="67", time_stamp="2025-06-17 16:56:22"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23097803", type="proposed", seq_num="22040078", num_tx="61", time_stamp="2025-06-17 16:57:15"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23097903", type="proposed", seq_num="22040174", num_tx="41", time_stamp="2025-06-17 16:58:07"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23097963", type="proposed", seq_num="22040232", num_tx="43", time_stamp="2025-06-17 16:58:38"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23097999", type="proposed", seq_num="22040266", num_tx="46", time_stamp="2025-06-17 16:58:58"} 1
+mc_block_proposal{validator="monad-devnet-02.staking4all.org", round="23098006", type="proposed", seq_num="22040273", num_tx="48", time_stamp="2025-06-17 16:59:01"} 1

@@ -7,8 +7,8 @@ source /home/monad/.profile
 
 # Get validator DNS
 VALIDATOR_DNS=$(grep 'VALIDATOR_DNS' /home/monad/monad-monitoring/.env | cut -d '=' -f2) || { echo "VALIDATOR_DNS not found in .env"; exit 1; }
-
-TARGET_DRIVE=$(grep 'TARGET_DRIVE' /home/monad/.env | cut -d '=' -f2) || { echo "TARGET_DRIVE not found in .env"; exit 1; }
+TARGET_DRIVE='triedb'
+#TARGET_DRIVE=$(grep 'TARGET_DRIVE' /home/monad/.env | cut -d '=' -f2) || { echo "TARGET_DRIVE not found in .env"; exit 1; }
 
 # Extract the used and total capacity from local monad_mpt binary
 used_with_unit=$(/usr/local/bin/monad-mpt --storage /dev/$TARGET_DRIVE | grep -A 1 'Capacity' | tail -n 1 | awk '{print $3, $4}' | tr -d '\r') || { echo "Failed to get used capacity"; exit 1; }

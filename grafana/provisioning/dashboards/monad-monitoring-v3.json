@@ -18,7 +18,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 3,
+  "id": 2,
   "links": [],
   "panels": [
     {
@@ -3950,7 +3950,12 @@
           "show": false
         },
         "showHeader": true,
-        "sortBy": []
+        "sortBy": [
+          {
+            "desc": true,
+            "displayName": "Round"
+          }
+        ]
       },
       "pluginVersion": "12.0.1+security-01",
       "targets": [
@@ -4012,6 +4017,18 @@
               "time_stamp": "Time Stamp",
               "type": "Status"
             }
+          }
+        },
+        {
+          "id": "convertFieldType",
+          "options": {
+            "conversions": [
+              {
+                "destinationType": "number",
+                "targetField": "Round"
+              }
+            ],
+            "fields": {}
           }
         },
         {
@@ -6436,5 +6453,5 @@
   "timezone": "browser",
   "title": "Monad monitoring v3",
   "uid": "bdvlxhplgqo00ev3",
-  "version": 3
+  "version": 2
 }
