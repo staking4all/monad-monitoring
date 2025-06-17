@@ -8,6 +8,12 @@ Currently, the Monad validator sends data to the Monad team using OpenTelemetry,
 
 You do not need to use the OpenTelemetry provided with Monad install if using this as it is bundled with the same components. 
 
+## Testnet 2 prereq Steps
+- Ensure that otelcol is down `systemctl stop otelcol`
+- Add the line `TARGET_DRIVE=triedb` to `/home/monad/.env`
+- Add monad user to the docker group `sudo usermod -aG docker monad` (as root user)
+- Make sure all services are up `systemctl status monad-bft monad-execution monad-rpc`, and if not start them
+ 
 ## Install 
 
 To make use of this repository and get monitoring running follow the below steps
