@@ -1,0 +1,18 @@
+{{ define "telegram.default" }}
+{{ range .Alerts }}
+
+{{ if eq .Status "firing"}}
+🔥 Firing: <b>{{ .Labels.alertname }}</b> 🔥
+{{ else }}
+✅ Resolved: <b>{{ .Labels.alertname }}</b> ✅
+{{ end }}
+<b>Description:</b> {{ .Annotations.description }}
+
+<b>Where:</b>
+    - job: {{ .Labels.job }}
+    - instance: {{ .Labels.instance }}
+{{ if eq .Status "firing"}}
+<b>Started at:</b> {{ .StartsAt }}
+{{ else }}
+<b>Started at:</b> {{ .StartsAt }}
+<b>Ended at:</b> {{ .EndsAt }}{{ end }}{{ end }}{{ end }}
