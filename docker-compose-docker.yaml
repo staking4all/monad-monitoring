@@ -20,6 +20,7 @@ services:
     command: --config.file=/etc/prometheus/prometheus.yml --no-scrape.adjust-timestamps
     volumes:
       - ./prometheus/prometheus.yaml:/etc/prometheus/prometheus.yml
+      - ./prometheus/monad_alerts.yml:/etc/prometheus/monad_alerts.yml
     networks:
       - monad_monad
     ports:
@@ -38,6 +39,18 @@ services:
       - monad_monad
     ports:
       - "3000:3000"
+
+  alertmanager:
+    container_name: alert_manager
+    image: prom/alertmanager:latest
+    restart: unless-stopped
+    volumes:
+      - ./alertmanager/:/etc/alertmanager/
+    command:
+      - '--config.file=/etc/alertmanager/config.yml'
+      - '--storage.path=/alertmanager'
+    expose:
+      - 9093
 
   node-exporter:
     image: prom/node-exporter:latest
