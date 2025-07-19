@@ -34,6 +34,7 @@ services:
     volumes:
       - ./grafana/grafana.ini:/etc/grafana/grafana.ini
       - ./grafana/provisioning/:/etc/grafana/provisioning/
+      - grafana-data:/var/lib/grafana
     networks:
       - monad_monad
     ports:
@@ -62,3 +63,6 @@ services:
 networks:
  monad_monad:
   external: true
+
+volumes:
+  grafana-data:
