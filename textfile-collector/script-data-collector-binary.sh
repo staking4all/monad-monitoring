@@ -5,10 +5,10 @@ source /home/monad/.env
 source /home/monad/.bashrc 
 source /home/monad/.profile
 
-# Get validator DNS
-VALIDATOR_DNS=$(grep 'VALIDATOR_DNS' /home/monad/monad-monitoring/.env | cut -d '=' -f2) || { echo "VALIDATOR_DNS not found in .env"; exit 1; }
-TARGET_DRIVE='triedb'
-#TARGET_DRIVE=$(grep 'TARGET_DRIVE' /home/monad/.env | cut -d '=' -f2) || { echo "TARGET_DRIVE not found in .env"; exit 1; }
+# Get validator secp
+VALIDATOR_SECP=$(grep 'VALIDATOR_SECP' /home/monad/monad-monitoring/.env | cut -d '=' -f2) || { echo "VALIDATOR_SECP not found in .env"; exit 1; }
+
+TARGET_DRIVE=$(grep 'TARGET_DRIVE' /home/monad/.env | cut -d '=' -f2) || { echo "TARGET_DRIVE not found in .env"; exit 1; }
 
 # Extract the used and total capacity from local monad_mpt binary
 used_with_unit=$(/usr/local/bin/monad-mpt --storage /dev/$TARGET_DRIVE | grep -A 1 'Capacity' | tail -n 1 | awk '{print $3, $4}' | tr -d '\r') || { echo "Failed to get used capacity"; exit 1; }
@@ -74,8 +74,8 @@ script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # Set the output file path relative to the script's location
 output_file="$script_dir/data/monad-metrics-data.prom"
 
-# Extract block proposals and skipped blocks from syslog
-mapfile -t block_logs < <(tail -500000 /var/log/syslog | grep -i "${VALIDATOR_DNS}\|${VALIDATOR_DNS}:8000" | grep -E '"message":"(proposed_block|skipped_block)"')
+# Extract block proposals, finalized and timeout blocks from syslog
+mapfile -t block_logs < <(tail -500000 /var/log/syslog | grep -i "\"author\":\"${VALIDATOR_SECP}\"" | grep -E '"message":"(proposed_block|finalized_block|timeout)"')
 
 # Process each block log
 declare -a block_proposals
@@ -95,8 +95,11 @@ for log in "${block_logs[@]}"; do
     if echo "$log" | grep -q '"message":"proposed_block"'; then
         block_type="proposed"
         value=1
-    elif echo "$log" | grep -q '"message":"skipped_block"'; then
-        block_type="skipped"
+    elif echo "$log" | grep -q '"message":"finalized_block"'; then
+        block_type="finalized"
+        value=1
+    elif echo "$log" | grep -q '"message":"timeout"'; then
+        block_type="timeout"
         value=0
     fi
 
@@ -105,9 +108,9 @@ for log in "${block_logs[@]}"; do
         # Use default values if seq_num or num_tx are not found
         seq_num=${seq_num:-"0"}
         num_tx=${num_tx:-"0"}
-        block_proposals+=("mc_block_proposal{validator=\"${VALIDATOR_DNS}\", round=\"${round}\", type=\"${block_type}\", seq_num=\"${seq_num}\", num_tx=\"${num_tx}\", time_stamp=\"${readable_timestamp}\"} $value")
+        block_proposals+=("mc_block_proposal{validator=\"${VALIDATOR_SECP}\", round=\"${round}\", type=\"${block_type}\", seq_num=\"${seq_num}\", num_tx=\"${num_tx}\", time_stamp=\"${readable_timestamp}\"} $value")
     fi
-done
+done	
 
 # Write all metrics to the output file
 {

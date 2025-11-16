@@ -3599,7 +3599,7 @@
       },
       "gridPos": {
         "h": 4,
-        "w": 12,
+        "w": 8,
         "x": 0,
         "y": 47
       },
@@ -3733,6 +3733,157 @@
             "mode": "thresholds"
           },
           "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red"
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 8,
+        "x": 8,
+        "y": 47
+      },
+      "id": 54,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.0.1+security-01",
+      "targets": [
+        {
+          "disableTextWrap": false,
+          "editorMode": "code",
+          "expr": "max by (round, type, time_stamp) (\r\n  mc_block_proposal{validator=~\".*\",type=\"finalized\"}\r\n)",
+          "format": "table",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": "Finalized blocks",
+      "transformations": [
+        {
+          "id": "groupBy",
+          "options": {
+            "fields": {
+              "Value": {
+                "aggregations": [
+                  "min"
+                ],
+                "operation": "aggregate"
+              },
+              "round": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "seen_unix": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "time_stamp": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "type": {
+                "aggregations": [],
+                "operation": "groupby"
+              }
+            }
+          }
+        },
+        {
+          "filter": {
+            "id": "byRefId",
+            "options": ""
+          },
+          "id": "groupBy",
+          "options": {
+            "fields": {
+              "Value (min)": {
+                "aggregations": [
+                  "count"
+                ],
+                "operation": "aggregate"
+              },
+              "round": {
+                "aggregations": []
+              },
+              "type": {
+                "aggregations": [],
+                "operation": "groupby"
+              }
+            }
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "includeByName": {},
+            "indexByName": {},
+            "renameByName": {
+              "Value (min)": "Success/Failure",
+              "round": "Round",
+              "seen_unix": "Time Stamp",
+              "time_stamp": "Time Stamp",
+              "type": "Status"
+            }
+          }
+        },
+        {
+          "id": "sortBy",
+          "options": {
+            "fields": {},
+            "sort": [
+              {
+                "desc": true,
+                "field": "Round"
+              }
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P35E6C0425375C40D"
+      },
+      "description": "Shows your success on proposing or missing blocks",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
           "noValue": "0",
           "thresholds": {
             "mode": "absolute",
@@ -3751,8 +3902,8 @@
       },
       "gridPos": {
         "h": 4,
-        "w": 12,
-        "x": 12,
+        "w": 8,
+        "x": 16,
         "y": 47
       },
       "id": 53,
@@ -3778,7 +3929,7 @@
         {
           "disableTextWrap": false,
           "editorMode": "code",
-          "expr": "max by (round, type, time_stamp) (\r\n  mc_block_proposal{validator=~\".*\",type=\"skipped\"}\r\n)",
+          "expr": "max by (round, type, time_stamp) (\r\n  mc_block_proposal{validator=~\".*\",type=\"timeout\"}\r\n)",
           "format": "table",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
@@ -3950,12 +4101,7 @@
           "show": false
         },
         "showHeader": true,
-        "sortBy": [
-          {
-            "desc": true,
-            "displayName": "Round"
-          }
-        ]
+        "sortBy": []
       },
       "pluginVersion": "12.0.1+security-01",
       "targets": [
@@ -4017,18 +4163,6 @@
               "time_stamp": "Time Stamp",
               "type": "Status"
             }
-          }
-        },
-        {
-          "id": "convertFieldType",
-          "options": {
-            "conversions": [
-              {
-                "destinationType": "number",
-                "targetField": "Round"
-              }
-            ],
-            "fields": {}
           }
         },
         {
@@ -6453,5 +6587,5 @@
   "timezone": "browser",
   "title": "Monad monitoring v3",
   "uid": "bdvlxhplgqo00ev3",
-  "version": 2
+  "version": 6
 }
