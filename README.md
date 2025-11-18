@@ -23,6 +23,11 @@ cd monad-monitoring
 nano .env
 ```
 
+Add your validator secp key to the collector yaml at `collector/otel-collector-config.yaml`. You will see in `collector/otel-collector-config.yaml` the value `value: "SECP_KEY"`, this should be changed to your SECP Key, example would be `value: "036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3"`
+```
+nano collector/otel-collector-config.yaml
+```
+
 To run a Monad node you can either use a binary or docker. To cater for both types of Monad installations we have provided two docker files. `docker-compose-binary.yaml` for a binary based installtion, `docker-compose-docker.yaml` for a docker based installation. Start up the monitoring stack with the relevant file.
 
 For a binary installation use
