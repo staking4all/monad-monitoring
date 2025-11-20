@@ -1,0 +1,60 @@
+route:
+  # How long to wait to send the first notification
+  group_wait: 1m
+  # Minimum interval between two notifications of the same group
+  group_interval: 1m
+  # How long to wait before re-notifying on the same alert
+  repeat_interval: 1h
+
+  # Labels to group by
+  group_by: ['alertname', 'cluster', 'service']
+
+  # Default receiver if no child route matches
+  receiver: 'telegram'
+
+  # Optional: route by severity
+  routes:
+    - receiver: 'slack'
+      match:
+        severity: warning
+
+    - receiver: 'pagerduty'
+      match:
+        severity: critical
+
+templates:
+  - "/etc/alertmanager/templates/*.tmpl"
+
+receivers:
+  # Telegram receiver (fill in chat_id + bot_token)
+  - name: 'telegram'
+    telegram_configs:
+      - api_url: https://api.telegram.org
+        parse_mode: "HTML"
+        message: '{{ template "telegram.default" . }}'
+        chat_id: <YOUR_TELEGRAM_CHAT_ID>
+        bot_token: <YOUR_TELEGRAM_BOT_TOKEN>
+        send_resolved: true
+
+  # Slack receiver (uncomment + fill in webhook_url, channel etc.)
+  - name: 'slack'
+    slack_configs:
+      - api_url: 'https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX'
+        channel: '#alerts'
+        username: 'Alertmanager'
+        icon_emoji: ':warning:'
+        # If you want “resolved” notifications:
+        send_resolved: true
+
+  # PagerDuty receiver (uncomment + fill in service/integration key)
+  - name: 'pagerduty'
+    pagerduty_configs:
+      - # For Events API v2 use `routing_key`; for v1 use `service_key`
+        routing_key: '<YOUR_PAGERDUTY_INTEGRATION_KEY>'
+        # Optionally override PD severity levels
+        severity: '{{ .CommonLabels.severity }}'
+        # Attach summary & description into PD event
+        details:
+          summary: '{{ .CommonAnnotations.summary }}'
+          description: '{{ .CommonAnnotations.description }}'
+        send_resolved: true
