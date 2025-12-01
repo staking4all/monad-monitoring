@@ -1,0 +1,115 @@
+name: Sync Upstream Changes
+
+on:
+  schedule:
+    # Run weekly on Monday at 9 AM UTC (5 PM Singapore time)
+    - cron: '0 9 * * 1'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  sync-upstream:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Add upstream remote
+        run: |
+          git remote add upstream https://github.com/staking4all/monad-monitoring.git || true
+          git fetch upstream main
+
+      - name: Check for new commits
+        id: check
+        run: |
+          NEW_COMMITS=$(git rev-list --count HEAD..upstream/main 2>/dev/null || echo "0")
+          echo "new_commits=$NEW_COMMITS" >> $GITHUB_OUTPUT
+
+          if [ "$NEW_COMMITS" -gt 0 ]; then
+            echo "has_updates=true" >> $GITHUB_OUTPUT
+
+            # Get commit log for PR description
+            COMMIT_LOG=$(git log HEAD..upstream/main --pretty=format:"- %h %s (%an)" 2>/dev/null)
+            {
+              echo "commit_log<<EOFLOG"
+              echo "$COMMIT_LOG"
+              echo "EOFLOG"
+            } >> $GITHUB_OUTPUT
+          else
+            echo "has_updates=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create sync branch and PR
+        if: steps.check.outputs.has_updates == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NEW_COMMITS: ${{ steps.check.outputs.new_commits }}
+          COMMIT_LOG: ${{ steps.check.outputs.commit_log }}
+        run: |
+          # Check if there's already an open PR
+          EXISTING_PR=$(gh pr list --label "upstream-sync" --state open --json number --jq 'length')
+
+          if [ "$EXISTING_PR" -eq 0 ]; then
+            # Create a new branch for the sync
+            BRANCH_NAME="upstream-sync-$(date +%Y%m%d)"
+            git checkout -b "$BRANCH_NAME"
+
+            # Merge upstream changes
+            if git merge upstream/main --no-edit; then
+              git push origin "$BRANCH_NAME"
+
+              # Create PR body
+              BODY="## Upstream Sync
+
+          This PR syncs changes from [staking4all/monad-monitoring](https://github.com/staking4all/monad-monitoring).
+
+          ### ${NEW_COMMITS} new commit(s) from upstream:
+
+          ${COMMIT_LOG}
+
+          ### Review Checklist
+          - [ ] Review the changes for compatibility
+          - [ ] Check if any custom configurations need updating
+          - [ ] Test after merging if needed
+
+          ---
+          *This PR was automatically created by the upstream sync workflow.*"
+
+              gh pr create \
+                --title "🔄 Sync upstream: ${NEW_COMMITS} new commit(s)" \
+                --body "$BODY" \
+                --label "upstream-sync" \
+                --base main \
+                --head "$BRANCH_NAME"
+
+              echo "✅ Created PR for ${NEW_COMMITS} new upstream commits"
+            else
+              echo "⚠️ Merge conflicts detected. Manual intervention required."
+              echo "Run locally:"
+              echo "  git fetch upstream"
+              echo "  git merge upstream/main"
+              echo "  # Resolve conflicts, then push"
+              exit 1
+            fi
+          else
+            echo "ℹ️ PR already exists, skipping creation"
+          fi
+
+      - name: Summary
+        run: |
+          if [ "${{ steps.check.outputs.has_updates }}" == "true" ]; then
+            echo "✅ Found ${{ steps.check.outputs.new_commits }} new upstream commits."
+          else
+            echo "✅ No new upstream commits. Your fork is up to date!"
+          fi
