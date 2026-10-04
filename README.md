@@ -199,8 +199,6 @@ sudo ufw allow 3000/tcp
 
 Browse to `http://<your_ip>:3000` and log in with the credentials from `.env`.
 
-![Monad monitoring v2 dashboard](docs/images/grafana-dashboard.png)
-
 The `net` dropdown at the top of each dashboard selects the metrics source. It fills itself in: `otel-collector` in modes 1 and 2, `monad-node` in mode 3. If it is empty right after startup, wait for Prometheus's first scrape (10–20 seconds) and reload.
 
 ## Dashboards
