@@ -3,118 +3,57 @@
 mc_triedb_total_bytes 1924145348608
 # HELP mc_triedb_used_bytes Used capacity of /dev/triedb
 # TYPE mc_triedb_used_bytes gauge
-mc_triedb_used_bytes 1418369999831
+mc_triedb_used_bytes 1440360232387
 # HELP mc_triedb_avail_bytes Available capacity of /dev/triedb
 # TYPE mc_triedb_avail_bytes gauge
-mc_triedb_avail_bytes 505775348777
+mc_triedb_avail_bytes 483785116221
 # HELP mc_current_epoch provides Monad epoch from logs
 # TYPE mc_current_epoch gauge
-mc_current_epoch 996
+mc_current_epoch 1364
 # HELP mc_current_round provides Monad round from logs
 # TYPE mc_current_round gauge
-mc_current_round 51993388
+mc_current_round 68680492
 # HELP mc_forkpoint_dir_count provides file count of Monad forkpoint directory
 # TYPE mc_forkpoint_dir_count gauge
-mc_forkpoint_dir_count 60169
+mc_forkpoint_dir_count 82441
 # HELP mc_ledger_dir_count provides file count of Monad ledger directory
 # TYPE mc_ledger_dir_count gauge
-mc_ledger_dir_count 189812
+mc_ledger_dir_count 258224
 # HELP mc_wal_dir_count provides file count of Monad wal files
 # TYPE mc_wal_dir_count gauge
-mc_wal_dir_count 2
-# HELP mc_block_proposal Indicates a block was proposed (1) or skipped (0) by this validator, with additional sequence and transaction details
-# TYPE mc_block_proposal gauge
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51984197", type="proposed", seq_num="49760713", num_tx="1003", time_stamp="2025-11-16 06:43:46"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51984197", type="finalized", seq_num="49760713", num_tx="0", time_stamp="2025-11-16 06:43:47"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51984466", type="proposed", seq_num="49760977", num_tx="1002", time_stamp="2025-11-16 06:45:36"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51984466", type="finalized", seq_num="49760977", num_tx="0", time_stamp="2025-11-16 06:45:37"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51984487", type="proposed", seq_num="49760998", num_tx="1001", time_stamp="2025-11-16 06:45:44"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51984487", type="finalized", seq_num="49760998", num_tx="0", time_stamp="2025-11-16 06:45:45"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51984498", type="proposed", seq_num="49761009", num_tx="1001", time_stamp="2025-11-16 06:45:49"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51984498", type="finalized", seq_num="49761009", num_tx="0", time_stamp="2025-11-16 06:45:50"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51984915", type="proposed", seq_num="49761416", num_tx="236", time_stamp="2025-11-16 06:48:41"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51984915", type="finalized", seq_num="49761416", num_tx="0", time_stamp="2025-11-16 06:48:41"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51985918", type="proposed", seq_num="49762408", num_tx="106", time_stamp="2025-11-16 06:55:28"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51985918", type="finalized", seq_num="49762408", num_tx="0", time_stamp="2025-11-16 06:55:29"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51986425", type="proposed", seq_num="49762914", num_tx="1004", time_stamp="2025-11-16 06:58:52"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51986425", type="finalized", seq_num="49762914", num_tx="0", time_stamp="2025-11-16 06:58:52"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51986492", type="proposed", seq_num="49762981", num_tx="1002", time_stamp="2025-11-16 06:59:19"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51986492", type="finalized", seq_num="49762981", num_tx="0", time_stamp="2025-11-16 06:59:19"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51986615", type="proposed", seq_num="49763101", num_tx="491", time_stamp="2025-11-16 07:00:10"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51986615", type="finalized", seq_num="49763101", num_tx="0", time_stamp="2025-11-16 07:00:10"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51987015", type="proposed", seq_num="49763500", num_tx="1003", time_stamp="2025-11-16 07:02:51"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51987015", type="finalized", seq_num="49763500", num_tx="0", time_stamp="2025-11-16 07:02:51"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51987136", type="proposed", seq_num="49763621", num_tx="1002", time_stamp="2025-11-16 07:03:39"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51987136", type="finalized", seq_num="49763621", num_tx="0", time_stamp="2025-11-16 07:03:40"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51987286", type="proposed", seq_num="49763769", num_tx="1002", time_stamp="2025-11-16 07:04:40"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51987286", type="finalized", seq_num="49763769", num_tx="0", time_stamp="2025-11-16 07:04:41"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51987303", type="proposed", seq_num="49763786", num_tx="387", time_stamp="2025-11-16 07:04:47"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51987303", type="finalized", seq_num="49763786", num_tx="0", time_stamp="2025-11-16 07:04:48"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51987692", type="proposed", seq_num="49764172", num_tx="1002", time_stamp="2025-11-16 07:07:24"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51987692", type="finalized", seq_num="49764172", num_tx="0", time_stamp="2025-11-16 07:07:25"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51987823", type="proposed", seq_num="49764299", num_tx="1003", time_stamp="2025-11-16 07:08:18"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51987823", type="finalized", seq_num="49764299", num_tx="0", time_stamp="2025-11-16 07:08:19"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51987857", type="proposed", seq_num="49764333", num_tx="362", time_stamp="2025-11-16 07:08:32"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51987857", type="finalized", seq_num="49764333", num_tx="0", time_stamp="2025-11-16 07:08:33"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51987900", type="proposed", seq_num="49764375", num_tx="1002", time_stamp="2025-11-16 07:08:50"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51987900", type="finalized", seq_num="49764375", num_tx="0", time_stamp="2025-11-16 07:08:51"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51988108", type="proposed", seq_num="49764581", num_tx="489", time_stamp="2025-11-16 07:10:14"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51988108", type="finalized", seq_num="49764581", num_tx="0", time_stamp="2025-11-16 07:10:15"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51988266", type="proposed", seq_num="49764735", num_tx="772", time_stamp="2025-11-16 07:11:19"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51988266", type="finalized", seq_num="49764735", num_tx="0", time_stamp="2025-11-16 07:11:20"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51988351", type="proposed", seq_num="49764819", num_tx="1002", time_stamp="2025-11-16 07:11:54"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51988351", type="finalized", seq_num="49764819", num_tx="0", time_stamp="2025-11-16 07:11:55"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51988370", type="proposed", seq_num="49764838", num_tx="1001", time_stamp="2025-11-16 07:12:01"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51988370", type="finalized", seq_num="49764838", num_tx="0", time_stamp="2025-11-16 07:12:02"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51988744", type="proposed", seq_num="49765209", num_tx="1007", time_stamp="2025-11-16 07:14:33"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51988744", type="finalized", seq_num="49765209", num_tx="0", time_stamp="2025-11-16 07:14:34"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51989342", type="proposed", seq_num="49765804", num_tx="515", time_stamp="2025-11-16 07:18:35"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51989342", type="finalized", seq_num="49765804", num_tx="0", time_stamp="2025-11-16 07:18:36"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51989472", type="proposed", seq_num="49765934", num_tx="1003", time_stamp="2025-11-16 07:19:27"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51989472", type="finalized", seq_num="49765934", num_tx="0", time_stamp="2025-11-16 07:19:28"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51989498", type="proposed", seq_num="49765960", num_tx="1001", time_stamp="2025-11-16 07:19:37"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51989498", type="finalized", seq_num="49765960", num_tx="0", time_stamp="2025-11-16 07:19:38"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51989670", type="proposed", seq_num="49766129", num_tx="491", time_stamp="2025-11-16 07:20:48"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51989670", type="finalized", seq_num="49766129", num_tx="0", time_stamp="2025-11-16 07:20:49"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51989718", type="proposed", seq_num="49766176", num_tx="758", time_stamp="2025-11-16 07:21:08"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51989718", type="finalized", seq_num="49766176", num_tx="0", time_stamp="2025-11-16 07:21:09"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51989976", type="proposed", seq_num="49766434", num_tx="1002", time_stamp="2025-11-16 07:22:51"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51989976", type="finalized", seq_num="49766434", num_tx="0", time_stamp="2025-11-16 07:22:52"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51990106", type="proposed", seq_num="49766563", num_tx="1004", time_stamp="2025-11-16 07:23:44"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51990106", type="finalized", seq_num="49766563", num_tx="0", time_stamp="2025-11-16 07:23:45"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51990237", type="proposed", seq_num="49766692", num_tx="645", time_stamp="2025-11-16 07:24:38"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51990237", type="finalized", seq_num="49766692", num_tx="0", time_stamp="2025-11-16 07:24:38"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51990465", type="proposed", seq_num="49766919", num_tx="496", time_stamp="2025-11-16 07:26:09"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51990465", type="finalized", seq_num="49766919", num_tx="0", time_stamp="2025-11-16 07:26:10"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51990499", type="proposed", seq_num="49766952", num_tx="236", time_stamp="2025-11-16 07:26:23"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51990499", type="finalized", seq_num="49766952", num_tx="0", time_stamp="2025-11-16 07:26:24"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51990863", type="proposed", seq_num="49767311", num_tx="5", time_stamp="2025-11-16 07:28:52"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51990863", type="finalized", seq_num="49767311", num_tx="0", time_stamp="2025-11-16 07:28:52"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51991036", type="proposed", seq_num="49767484", num_tx="112", time_stamp="2025-11-16 07:30:01"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51991036", type="finalized", seq_num="49767484", num_tx="0", time_stamp="2025-11-16 07:30:01"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51991042", type="proposed", seq_num="49767490", num_tx="1002", time_stamp="2025-11-16 07:30:03"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51991042", type="finalized", seq_num="49767490", num_tx="0", time_stamp="2025-11-16 07:30:04"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51991084", type="proposed", seq_num="49767531", num_tx="1001", time_stamp="2025-11-16 07:30:21"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51991084", type="finalized", seq_num="49767531", num_tx="0", time_stamp="2025-11-16 07:30:21"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51991217", type="proposed", seq_num="49767662", num_tx="1005", time_stamp="2025-11-16 07:31:15"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51991217", type="finalized", seq_num="49767662", num_tx="0", time_stamp="2025-11-16 07:31:15"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51991267", type="proposed", seq_num="49767711", num_tx="1002", time_stamp="2025-11-16 07:31:35"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51991267", type="finalized", seq_num="49767711", num_tx="0", time_stamp="2025-11-16 07:31:36"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51991435", type="proposed", seq_num="49767878", num_tx="1004", time_stamp="2025-11-16 07:32:43"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51991435", type="finalized", seq_num="49767878", num_tx="0", time_stamp="2025-11-16 07:32:44"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51991856", type="proposed", seq_num="49768294", num_tx="1005", time_stamp="2025-11-16 07:35:35"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51991856", type="finalized", seq_num="49768294", num_tx="0", time_stamp="2025-11-16 07:35:35"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51992323", type="proposed", seq_num="49768758", num_tx="1003", time_stamp="2025-11-16 07:38:44"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51992323", type="finalized", seq_num="49768758", num_tx="0", time_stamp="2025-11-16 07:38:44"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51992486", type="proposed", seq_num="49768919", num_tx="1004", time_stamp="2025-11-16 07:39:50"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51992486", type="finalized", seq_num="49768919", num_tx="0", time_stamp="2025-11-16 07:39:51"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51992692", type="proposed", seq_num="49769122", num_tx="2009", time_stamp="2025-11-16 07:41:14"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51992692", type="finalized", seq_num="49769122", num_tx="0", time_stamp="2025-11-16 07:41:15"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51992707", type="proposed", seq_num="49769136", num_tx="1002", time_stamp="2025-11-16 07:41:21"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51992707", type="finalized", seq_num="49769136", num_tx="0", time_stamp="2025-11-16 07:41:21"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51992771", type="proposed", seq_num="49769199", num_tx="248", time_stamp="2025-11-16 07:41:47"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51992771", type="finalized", seq_num="49769199", num_tx="0", time_stamp="2025-11-16 07:41:47"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51992878", type="proposed", seq_num="49769305", num_tx="1003", time_stamp="2025-11-16 07:42:30"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51992878", type="finalized", seq_num="49769305", num_tx="0", time_stamp="2025-11-16 07:42:31"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51992954", type="proposed", seq_num="49769381", num_tx="1003", time_stamp="2025-11-16 07:43:01"} 1
-mc_block_proposal{validator="036bbd589054dacff9febaa948f88f2d057537efcfea3624c2405873ed380548d3", round="51992954", type="finalized", seq_num="49769381", num_tx="0", time_stamp="2025-11-16 07:43:01"} 1
+mc_wal_dir_count 0
+# HELP monlog_status Raw monlog output lines with timestamps
+# TYPE monlog_status gauge
+monlog_status{timestamp="2026-10-04T19:50:02.895801139", line="━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"} 1
+monlog_status{timestamp="2026-10-04T19:50:02.897601958", line="  MONLOG v0.6.0 - Monad Log Analyzer"} 1
+monlog_status{timestamp="2026-10-04T19:50:02.899402105", line="━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"} 1
+monlog_status{timestamp="2026-10-04T19:50:02.901165674", line="Network: testnet"} 1
+monlog_status{timestamp="2026-10-04T19:50:02.903892444", line="📦 VERSION INFORMATION"} 1
+monlog_status{timestamp="2026-10-04T19:50:02.905800313", line="APT Package:"} 1
+monlog_status{timestamp="2026-10-04T19:50:02.907681392", line="  hi monad 0.16.3 amd64 Monad BFT stack (with debug symbols)"} 1
+monlog_status{timestamp="2026-10-04T19:50:02.909597606", line="RPC Version:"} 1
+monlog_status{timestamp="2026-10-04T19:50:02.911791199", line="  {\"jsonrpc\":\"2.0\",\"result\":\"Monad/0.16.3\",\"id\":1}"} 1
+monlog_status{timestamp="2026-10-04T19:50:02.914335308", line="---"} 1
+monlog_status{timestamp="2026-10-04T19:50:02.916085091", line="Fetching last 60 seconds from journalctl..."} 1
+monlog_status{timestamp="2026-10-04T19:50:02.918482665", line="━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"} 1
+monlog_status{timestamp="2026-10-04T19:50:02.920352282", line="🔄 STATE SYNC STATUS"} 1
+monlog_status{timestamp="2026-10-04T19:50:02.922101575", line="No StateSync messages."} 1
+monlog_status{timestamp="2026-10-04T19:50:02.924380668", line="━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"} 1
+monlog_status{timestamp="2026-10-04T19:50:02.926205551", line="📦 BLOCK SYNC STATUS"} 1
+monlog_status{timestamp="2026-10-04T19:50:02.927940055", line="ZERO BlockSync overrides detected."} 1
+monlog_status{timestamp="2026-10-04T19:50:02.929639374", line="No BlockSync messages."} 1
+monlog_status{timestamp="2026-10-04T19:50:02.931639586", line="━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"} 1
+monlog_status{timestamp="2026-10-04T19:50:02.933356858", line="📡 RAPTORCAST STATUS"} 1
+monlog_status{timestamp="2026-10-04T19:50:02.935114676", line="✅ RaptorCast: Confirming group join!"} 1
+monlog_status{timestamp="2026-10-04T19:50:02.936775793", line="RaptorCast: sending ping request..."} 1
+monlog_status{timestamp="2026-10-04T19:50:02.938454233", line="🟡 RaptorCast: Pings sent but no pong responses detected in the last 60 seconds!"} 1
+monlog_status{timestamp="2026-10-04T19:50:02.940189588", line="RaptorCast: Seeing ping timeouts when trying to connect to the below:"} 1
+monlog_status{timestamp="2026-10-04T19:50:02.941881453", line="	02d7a97fe218ff3a82abf90128f0a027eee11ef16d2013654d7da45c7fc794e484"} 1
+monlog_status{timestamp="2026-10-04T19:50:02.943609846", line="━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"} 1
+monlog_status{timestamp="2026-10-04T19:50:02.945287053", line="📊 CONSENSUS STATUS"} 1
+monlog_status{timestamp="2026-10-04T19:50:02.946974620", line="Most recent round: 68680498"} 1
+monlog_status{timestamp="2026-10-04T19:50:02.948648501", line="Most recent epoch: 1364"} 1
+monlog_status{timestamp="2026-10-04T19:50:02.950326359", line="Most recent block: 68179205"} 1
+monlog_status{timestamp="2026-10-04T19:50:02.951994319", line="✅ Blocks processing and being committed"} 1
+monlog_status{timestamp="2026-10-04T19:50:02.953736588", line="━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"} 1
+monlog_status{timestamp="2026-10-04T19:50:02.955464210", line="━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"} 1

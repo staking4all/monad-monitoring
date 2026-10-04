@@ -3072,23 +3072,22 @@
   "templating": {
     "list": [
       {
-        "current": {
-          "selected": false,
-          "text": "otel-collector",
-          "value": "otel-collector"
-        },
-        "hide": 0,
         "name": "net",
-        "options": [
-          {
-            "selected": true,
-            "text": "otel-collector",
-            "value": "otel-collector"
-          }
-        ],
-        "query": "otel-collector",
-        "skipUrlSync": false,
-        "type": "textbox"
+        "label": "net",
+        "type": "query",
+        "datasource": null,
+        "definition": "label_values(monad_execution_ledger_block_num, job)",
+        "query": {
+          "query": "label_values(monad_execution_ledger_block_num, job)",
+          "refId": "PrometheusVariableQueryEditor-VariableQuery"
+        },
+        "refresh": 2,
+        "sort": 1,
+        "hide": 0,
+        "includeAll": false,
+        "multi": false,
+        "current": {},
+        "options": []
       }
     ]
   },

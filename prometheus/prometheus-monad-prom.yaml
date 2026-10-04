@@ -1,0 +1,9 @@
+scrape_configs:
+  - job_name: "monad-node"
+    scrape_interval: 10s
+    static_configs:
+      - targets: ["host.docker.internal:9143"]
+  - job_name: node
+    scrape_interval: 10s
+    static_configs:
+      - targets: ["node-exporter:9100"]

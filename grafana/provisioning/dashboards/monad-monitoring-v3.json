@@ -4068,11 +4068,11 @@
                     "options": {
                       "0": {
                         "index": 1,
-                        "text": "🟥"
+                        "text": "\ud83d\udfe5"
                       },
                       "1": {
                         "index": 0,
-                        "text": "🟩"
+                        "text": "\ud83d\udfe9"
                       }
                     },
                     "type": "value"
@@ -4181,12 +4181,152 @@
       "type": "table"
     },
     {
+      "datasource": {
+        "uid": "P35E6C0425375C40D"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto",
+              "wrapText": false
+            },
+            "filterable": false,
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "timestamp"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 347
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 16,
+        "w": 24,
+        "x": 0,
+        "y": 66
+      },
+      "id": 55,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "enablePagination": false,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "frameIndex": 7,
+        "showHeader": false,
+        "sortBy": []
+      },
+      "pluginVersion": "12.0.1+security-01",
+      "targets": [
+        {
+          "disableTextWrap": false,
+          "editorMode": "code",
+          "expr": "last_over_time(monlog_status[1m])",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": "Monlog info",
+      "transformations": [
+        {
+          "id": "extractFields",
+          "options": {
+            "delimiter": ",",
+            "format": "regexp",
+            "regExp": ".*line=\"([^\"]*)\".*timestamp=\"([^\"]*)\"",
+            "source": "{__name__=\"monlog_status\", instance=\"node-exporter:9100\", job=\"node\", line=\"---\", timestamp=\"2025-11-19T17:41:03\"}"
+          }
+        },
+        {
+          "id": "reduce",
+          "options": {
+            "labelsToFields": true,
+            "reducers": [
+              "last"
+            ]
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Field": true,
+              "Last": true,
+              "__name__": true,
+              "instance": true,
+              "job": true
+            },
+            "includeByName": {},
+            "indexByName": {
+              "Field": 0,
+              "Last": 6,
+              "__name__": 1,
+              "instance": 2,
+              "job": 3,
+              "line": 5,
+              "timestamp": 4
+            },
+            "renameByName": {}
+          }
+        },
+        {
+          "id": "sortBy",
+          "options": {
+            "fields": {},
+            "sort": [
+              {
+                "field": "timestamp"
+              }
+            ]
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
       "collapsed": false,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 66
+        "y": 82
       },
       "id": 43,
       "panels": [],
@@ -4237,7 +4377,7 @@
         "h": 2,
         "w": 6,
         "x": 0,
-        "y": 67
+        "y": 83
       },
       "id": 51,
       "maxDataPoints": 100,
@@ -4330,7 +4470,7 @@
         "h": 2,
         "w": 6,
         "x": 6,
-        "y": 67
+        "y": 83
       },
       "id": 39,
       "maxDataPoints": 100,
@@ -4423,7 +4563,7 @@
         "h": 2,
         "w": 6,
         "x": 12,
-        "y": 67
+        "y": 83
       },
       "id": 36,
       "maxDataPoints": 100,
@@ -4520,7 +4660,7 @@
         "h": 2,
         "w": 6,
         "x": 18,
-        "y": 67
+        "y": 83
       },
       "id": 38,
       "maxDataPoints": 100,
@@ -4612,7 +4752,7 @@
         "h": 3,
         "w": 12,
         "x": 0,
-        "y": 69
+        "y": 85
       },
       "id": 48,
       "options": {
@@ -4695,7 +4835,7 @@
         "h": 3,
         "w": 12,
         "x": 12,
-        "y": 69
+        "y": 85
       },
       "id": 47,
       "options": {
@@ -5137,7 +5277,7 @@
         "h": 10,
         "w": 12,
         "x": 0,
-        "y": 72
+        "y": 88
       },
       "id": 42,
       "options": {
@@ -5597,7 +5737,7 @@
         "h": 10,
         "w": 12,
         "x": 12,
-        "y": 72
+        "y": 88
       },
       "id": 44,
       "options": {
@@ -6059,7 +6199,7 @@
         "h": 10,
         "w": 12,
         "x": 0,
-        "y": 82
+        "y": 98
       },
       "id": 45,
       "options": {
@@ -6510,7 +6650,7 @@
         "h": 10,
         "w": 12,
         "x": 12,
-        "y": 82
+        "y": 98
       },
       "id": 46,
       "options": {
@@ -6562,30 +6702,32 @@
   "templating": {
     "list": [
       {
-        "current": {
-          "text": "otel-collector",
-          "value": "otel-collector"
-        },
         "name": "net",
-        "options": [
-          {
-            "selected": true,
-            "text": "otel-collector",
-            "value": "otel-collector"
-          }
-        ],
-        "query": "otel-collector",
-        "type": "textbox"
+        "label": "net",
+        "type": "query",
+        "datasource": null,
+        "definition": "label_values(monad_execution_ledger_block_num, job)",
+        "query": {
+          "query": "label_values(monad_execution_ledger_block_num, job)",
+          "refId": "PrometheusVariableQueryEditor-VariableQuery"
+        },
+        "refresh": 2,
+        "sort": 1,
+        "hide": 0,
+        "includeAll": false,
+        "multi": false,
+        "current": {},
+        "options": []
       }
     ]
   },
   "time": {
-    "from": "now-5m",
+    "from": "now-15m",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "browser",
   "title": "Monad monitoring v3",
   "uid": "bdvlxhplgqo00ev3",
-  "version": 6
+  "version": 3
 }

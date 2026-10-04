@@ -110,7 +110,26 @@ for log in "${block_logs[@]}"; do
         num_tx=${num_tx:-"0"}
         block_proposals+=("mc_block_proposal{validator=\"${VALIDATOR_SECP}\", round=\"${round}\", type=\"${block_type}\", seq_num=\"${seq_num}\", num_tx=\"${num_tx}\", time_stamp=\"${readable_timestamp}\"} $value")
     fi
-done	
+done
+
+
+#add monlog
+monlog_bin="$script_dir/monlog"
+# Correctly execute the variable containing the path
+monlog_output=$("$monlog_bin" 2>/dev/null)
+
+monlog_metrics=() # Initialize array
+while IFS= read -r line; do
+    # 1. Generate unique timestamp (nanoseconds %N) for every line to prevent metric collapsing
+    log_ts=$(date +"%Y-%m-%dT%H:%M:%S.%N")
+    # Only process non-empty lines
+    if [[ -n "$line" ]]; then
+        clean_line=$(echo "$line" | sed 's/"/\\"/g')
+        # 2. Use universally compatible array index assignment instead of non-Bash-compatible `+=`
+        monlog_metrics[${#monlog_metrics[@]}]="monlog_status{timestamp=\"$log_ts\", line=\"$clean_line\"} 1"
+    fi
+done <<< "$monlog_output"
+
 
 # Write all metrics to the output file
 {
@@ -154,4 +173,14 @@ done
             printf "%s\n" "$proposal"
         done
     fi
+
+     # Write monlog metrics
+    if [ ${#monlog_metrics[@]} -gt 0 ]; then
+        printf "# HELP monlog_status Raw monlog output lines with timestamps\n"
+        printf "# TYPE monlog_status gauge\n"
+        for m in "${monlog_metrics[@]}"; do
+            printf "%s\n" "$m"
+        done
+    fi
+
 } > "$output_file" 2>/dev/null || { echo "Cannot write to monad-metrics-data.prom"; exit 1; }
