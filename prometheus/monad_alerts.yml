@@ -1,0 +1,68 @@
+groups:
+- name: monad_alerts
+  rules:
+    # Critical alerts
+    - alert: MonadBlockHeightStalled
+      expr: |
+        increase(monad_execution_ledger_block_num[5m]) == 0
+      for: 5m
+      labels:
+        severity: critical
+      annotations:
+        summary: "Monad node: Block height stalled"
+        description: "The block height (monad_execution_ledger_block_num) has not increased for 5 minutes on {{ $labels.instance }}."
+
+    - alert: MonadSkippedBlocksHigh
+      expr: |
+        increase(mc_block_proposal{type="skipped"}[1h]) > 5
+      labels:
+        severity: critical
+      annotations:
+        summary: "Monad node: High number of skipped blocks"
+        description: "Instance {{ $labels.instance }} skipped more than 5 blocks in the last hour."
+
+    # Warning alerts
+    - alert: MonadStateRootLag
+      expr: |
+        increase(monad_state_consensus_events_rx_execution_lagging[15m]) > 0
+      labels:
+        severity: warning
+      annotations:
+        summary: "Monad node: State root validation lag"
+        description: "Execution lag events (monad_state_consensus_events_rx_execution_lagging) > 0 on {{ $labels.instance }} in the last 15 minutes."
+
+    - alert: MonadTimestampValidationFailures
+      expr: |
+        increase(monad_state_consensus_events_failed_ts_validation[15m]) > 0
+      labels:
+        severity: warning
+      annotations:
+        summary: "Monad node: Timestamp validation failures"
+        description: "Timestamp validation failures (monad_state_consensus_events_failed_ts_validation) > 0 on {{ $labels.instance }} in the last 15 minutes."
+
+    - alert: MonadBlockSyncResponses
+      expr: |
+        increase(monad_state_blocksync_events_payload_response_successful[15m]) > 0
+      labels:
+        severity: warning
+      annotations:
+        summary: "Monad node: Blocksync responses observed"
+        description: "Blocksync successful responses (monad_state_blocksync_events_payload_response_successful) > 0 on {{ $labels.instance }} in the last 15 minutes."
+
+    - alert: MonadStateSyncInProgress
+      expr: |
+        monad_statesync_syncing > 0
+      labels:
+        severity: warning
+      annotations:
+        summary: "Monad node: State sync in progress"
+        description: "monad_statesync_syncing > 0 on {{ $labels.instance }} indicates state sync is not complete."
+
+    - alert: MonadTrieDBUsageHigh
+      expr: |
+        100 - ((mc_triedb_avail_bytes * 100) / mc_triedb_total_bytes) > 80
+      labels:
+        severity: warning
+      annotations:
+        summary: "Monad node: TrieDB is almost full"
+        description: "TrieDB usage has exceeded 80% on {{ $labels.instance }}."
